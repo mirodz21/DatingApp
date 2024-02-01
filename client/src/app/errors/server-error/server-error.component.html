@@ -1,0 +1,9 @@
+<div class="container">
+  <h1>Server Not Found</h1>
+  <h4>Inter Server Error</h4>
+  <ng-container *ngIf="error">
+    <h5>error:{{ error.message }}</h5>
+  </ng-container>
+
+  <button class="btn btn-info btn-lg" routerLink="/">Return to Home</button>
+</div>
