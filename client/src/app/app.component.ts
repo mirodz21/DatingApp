@@ -5,7 +5,7 @@ import { User } from './_model/user';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.sass',
+  styleUrl: './app.component.css',
 })
 export class AppComponent implements OnInit {
   title: string = 'DatingApp';
