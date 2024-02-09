@@ -65,6 +65,18 @@ export class MembersService {
     );
   }
 
+  addLike(username: string) {
+    return this.http.post(this.baseUrl + 'likes/' + username, {});
+  }
+
+  getLikes(predicate: string, pageNumber: number, pageSize: number) {
+    let params = this.getPaginationHeader(pageNumber, pageSize);
+    params = params.append('predicate', predicate);
+    return this.getPaginatedResult<Member[]>(
+      this.baseUrl + 'likes?' + predicate,
+      params
+    );
+  }
   getMember(username: string) {
     const member = [...this.memberCache.values()]
       .reduce((arr, elem) => arr.concat(elem.result), [])
